@@ -14,10 +14,10 @@ export default function Home() {
   const router = useRouter()
   
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: Platform.OS === 'ios' ? COLORS.lightWhite : COLORS.green, }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: Platform.OS === 'ios' ? COLORS.lightWhite : COLORS.lightWhite, }}>
         <Stack.Screen 
             options={{ 
-              headerStyle: {backgroundColor: COLORS.gray},
+              headerStyle: {backgroundColor: COLORS.orange},
               headerTitle: "MY Job Finder",
               headerLeft: () => (
                 <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
