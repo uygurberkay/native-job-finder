@@ -18,18 +18,31 @@ export default function Home() {
         <Stack.Screen 
             options={{ 
               headerStyle: {backgroundColor: COLORS.gray},
-              title: "Meta Yıldız",
+              headerTitle: "MY Job Finder",
               headerLeft: () => (
                 <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
               ),
               headerRight: () => (
                 <ScreenHeaderBtn iconUrl={icons.profile} dimension="60%" />
               ),
-              }} 
-              
+              }}  
             />
-      <Link href="/details">Go to Details</Link>
-      <Link href="/menu">Go to Menu</Link>
+            <ScrollView showsVerticalScrollIndicator={false}>
+              <View
+                style={{
+                  flex:1,
+                  padding: SIZES.medium,
+                }}
+              >
+              <Welcome username={'Berkay'}
+
+              />
+              <Popularjobs />
+              <Nearbyjobs />
+              </View>
+            </ScrollView>
+          <Link href="/details">Go to Details</Link>
+          <Link href="/menu">Go to Menu</Link>
     </SafeAreaView>
   );
 }
