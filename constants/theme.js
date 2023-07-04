@@ -8,6 +8,8 @@ const COLORS = {
 
   white: "#F3F4F8",
   lightWhite: "#FAFAFC",
+  orange: "#e9ff70",
+  green:"#ccff33",
 };
 
 const FONT = {

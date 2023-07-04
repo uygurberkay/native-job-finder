@@ -1,18 +1,35 @@
-import { View , Text} from "react-native";
-import { Link, Stack } from "expo-router";
+import {
+  View , Text , ScrollView, SafeAreaView, Platform, 
+} from "react-native";
+import { Link, Stack, useRouter } from "expo-router";
+import {useState} from 'react'
+import {
+  COLORS, icons, images, SIZES,
+} from '../constants'
+import {
+  Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome, 
+} from '../components'
 
 export default function Home() {
+  const router = useRouter()
+  
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>
-            Home Page
-        </Text>
+    <SafeAreaView style={{ flex: 1, backgroundColor: Platform.OS === 'ios' ? COLORS.lightWhite : COLORS.green, }}>
         <Stack.Screen 
-            options={{ title: "Overview" }} 
-                
+            options={{ 
+              headerStyle: {backgroundColor: COLORS.gray},
+              title: "Meta Yıldız",
+              headerLeft: () => (
+                <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
+              ),
+              headerRight: () => (
+                <ScreenHeaderBtn iconUrl={icons.profile} dimension="60%" />
+              ),
+              }} 
+              
             />
       <Link href="/details">Go to Details</Link>
       <Link href="/menu">Go to Menu</Link>
-    </View>
+    </SafeAreaView>
   );
 }
