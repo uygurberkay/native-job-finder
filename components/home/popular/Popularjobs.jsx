@@ -56,7 +56,8 @@ const Popularjobs = ({jobTitle}) => {
               // handleCardPress={handleCardPress}
             />
           )}
-          keyExtractor={(item) => item.job_id}
+          // keyExtractor={(item) => item?.job_id} dont use till get apı
+          keyExtractor={(item) => String(item)}
           contentContainerStyle={{ columnGap: SIZES.medium}}
           horizontal
           />

@@ -25,10 +25,10 @@ const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
           resizeMode='contain'
           style={styles.logoImage}
         />
-        <Text>
-          Test
-        </Text>
       </TouchableOpacity>
+      <Text>
+        Test
+      </Text>
     </TouchableOpacity>
   )
 }
