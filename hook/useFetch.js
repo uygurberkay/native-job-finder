@@ -13,13 +13,13 @@ const useFetch = (endpoint, query) => {
 
     const options = {
         method: 'GET',
-        url: `https://jsearch.p.rapidapi.com/search${endpoint}`,
+        url: `https://jsearch.p.rapidapi.com/${endpoint}`,
         headers: {
-            'X-RapidAPI-Key': `${RAPID_API_KEY}`,
+            'X-RapidAPI-Key': '9371d3b500mshfa5c10a38d4aa05p15e2a8jsn94fde9f7e217',
             'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
-        } , 
+        },
         params: { ...query },
-        };
+    };
 
     const fetchData = async () => {
         setIsLoading(true);
@@ -31,7 +31,6 @@ const useFetch = (endpoint, query) => {
             setIsLoading(false);
         } catch (error) {
             setError(error);
-            console.log(error)
             alert('There is an error')
         } finally {
             setIsLoading(false);
