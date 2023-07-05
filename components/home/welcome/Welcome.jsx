@@ -14,7 +14,7 @@ import {
 
 const jobTypes = ["Full-time" , "Part-time" , "Contractor" , "Trainee" ];
 
-const Welcome = ({username}) => {
+const Welcome = ({username, searchTerm, setSearchTerm, handleClick }) => {
   const router = useRouter()
   const [activeJobType, setActiveJobType] = useState('Full-time')
   
@@ -51,6 +51,9 @@ const Welcome = ({username}) => {
           renderItem={({item}) => (
             <TouchableOpacity
               style={styles.tab(activeJobType,item)}
+              onPress={() => {
+                setActiveJobType(item);
+              }}
             >
               <Text>{item}</Text>
             </TouchableOpacity>

@@ -37,7 +37,7 @@ export default function Home() {
               <Welcome username={'Berkay'}
 
               />
-              <Popularjobs />
+              <Popularjobs jobTitle={'React Developer'} />
               <Nearbyjobs />
               </View>
             </ScrollView>
