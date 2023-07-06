@@ -5,12 +5,19 @@ const COLORS = {
 
   gray: "#83829A",
   gray2: "#C1C0C8",
+  gray3: "#7895CB",
+
+  unknown: "#4A55A2",
+  darkblue: "#322751",
 
   lime: "#80ed99",
   white: "#F3F4F8",
   lightWhite: "#FAFAFC",
-  orange: "#e9ff70",
+  orange: "#ffcad4",
   green:"#ccff33",
+  whiteblue:"#091856",
+  coollime: "#6AF187",
+  
 };
 
 const FONT = {

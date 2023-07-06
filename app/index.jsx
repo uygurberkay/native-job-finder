@@ -1,5 +1,5 @@
 import {
-  View , Text , ScrollView, SafeAreaView, Platform, 
+  View , Text , ScrollView, SafeAreaView, Platform,
 } from "react-native";
 import { Link, Stack, useRouter } from "expo-router";
 import {useState} from 'react'
@@ -17,8 +17,9 @@ export default function Home() {
     <SafeAreaView style={{ flex: 1, backgroundColor: Platform.OS === 'ios' ? COLORS.lightWhite : COLORS.lightWhite, }}>
         <Stack.Screen 
             options={{ 
-              headerStyle: {backgroundColor: COLORS.orange},
+              headerStyle: { backgroundColor: COLORS.lime },
               headerTitle: "MY Job Finder",
+              headerTintColor: COLORS.darkblue,
               headerLeft: () => (
                 <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
               ),
@@ -38,11 +39,11 @@ export default function Home() {
 
               />
               <Popularjobs jobTitle={'React Developer'} />
-              <Nearbyjobs />
+              <Nearbyjobs jobTitle={'React Developer'}/>
               </View>
             </ScrollView>
-          <Link href="/details">Go to Details</Link>
-          <Link href="/menu">Go to Menu</Link>
+              <Link href="/details">Go to Details</Link>
+              <Link href="/menu">Go to Menu</Link>
     </SafeAreaView>
   );
 }

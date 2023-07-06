@@ -18,10 +18,15 @@ const Popularjobs = ({jobTitle}) => {
   const router = useRouter()
   const { data, isLoading, error } = useFetch("search", {
     query: `${jobTitle}`,
+    // query: 'React Developer at İzmir',
     num_pages: "1",
   });
-
   const [selectedJob, setSelectedJob] = useState();
+
+  const handleCardPress = (item) => {
+    router.push(`/job-details/${item.job_id}`);
+    setSelectedJob(item.job_id);
+  };
 
   return (
     <View style={styles.container}>
@@ -48,22 +53,21 @@ const Popularjobs = ({jobTitle}) => {
           </Text>
         ) : (
           <FlatList 
-          data={[1,2,3,4,5,6,7,8,9,10]}
-          renderItem={({item}) => (
-            <PopularjobCard 
-              item={item}
-              // selectedJob={selectedJob}
-              // handleCardPress={handleCardPress}
+            data={data}
+            renderItem={({item}) => (
+              <PopularjobCard 
+                item={item}
+                selectedJob={selectedJob}
+                handleCardPress={handleCardPress}
             />
           )}
-          // keyExtractor={(item) => item?.job_id} dont use till get apı
-          keyExtractor={(item) => String(item)}
+          keyExtractor={(item) => item?.job_id} 
+          // keyExtractor={(item) => String(item)}
           contentContainerStyle={{ columnGap: SIZES.medium}}
           horizontal
           />
         )}
       </View>
-
     </View>
   )
 }

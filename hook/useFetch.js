@@ -13,27 +13,28 @@ const useFetch = (endpoint, query) => {
         method: "GET",
         url: `https://jsearch.p.rapidapi.com/${endpoint}`,
         headers: {
-        "X-RapidAPI-Key": '9371d3b500mshfa5c10a38d4aa05p15e2a8jsn94fde9f7e217',
-        "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
+            'X-RapidAPI-Key': '13fb138a3bmsha922856072556abp15bdd7jsn6226bd63ecee',
+            'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
         },
         params: { ...query },
     };
 
     const fetchData = async () => {
         setIsLoading(true);
-
+    
         try {
-        const response = await axios.request(options);
-
-        setData(response.data);
-        setIsLoading(false);
+            const response = await axios.request(options);
+        
+            setData(response.data.data);
+            setIsLoading(false);
         } catch (error) {
-        setError(error);
-        console.log(error)
+            setError(error);
+            console.log(error)
         } finally {
-        setIsLoading(false);
+            setIsLoading(false);
         }
     };
+    
 
     useEffect(() => {
         fetchData();
