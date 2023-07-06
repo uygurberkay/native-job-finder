@@ -21,6 +21,7 @@ const Popularjobs = ({jobTitle}) => {
     // query: 'React Developer at İzmir',
     num_pages: "1",
   });
+
   const [selectedJob, setSelectedJob] = useState();
 
   const handleCardPress = (item) => {
@@ -62,7 +63,6 @@ const Popularjobs = ({jobTitle}) => {
             />
           )}
           keyExtractor={(item) => item?.job_id} 
-          // keyExtractor={(item) => String(item)}
           contentContainerStyle={{ columnGap: SIZES.medium}}
           horizontal
           />

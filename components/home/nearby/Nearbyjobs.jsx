@@ -24,11 +24,6 @@ const Nearbyjobs = ({jobTitle}) => {
   });
   const [selectedJob, setSelectedJob] = useState();
 
-  const handleCardPress = (item) => {
-    router.push(`/job-details/${item.job_id}`);
-    setSelectedJob(item.job_id);
-  };
-
   return (
     <View style={styles.container}>
 
@@ -47,21 +42,20 @@ const Nearbyjobs = ({jobTitle}) => {
 
       <View style={styles.cardsContainer}>
         {isLoading ? (
-          <ActivityIndicator size={'large'} color={COLORS.lime} />
+          <ActivityIndicator size='large' color={COLORS.primary} />
         ) : error ? (
-          <Text>
-            Something went wrong
-          </Text>
+          <Text>Something went wrong</Text>
         ) : (
           data?.map((job) => (
-            <NearbyJobCard 
+            <NearbyJobCard
               job={job}
-              key={`nearby-job-${job?.job_id}`}
+              key={`nearby-job-${job.job_id}`}
               handleNavigate={() => router.push(`/job-details/${job.job_id}`)}
             />
           ))
         )}
       </View>
+      
     </View>
   )
 }

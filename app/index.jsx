@@ -18,7 +18,7 @@ export default function Home() {
         <Stack.Screen 
             options={{ 
               headerStyle: { backgroundColor: COLORS.lime },
-              headerTitle: "MY Job Finder",
+              headerTitle: "",
               headerTintColor: COLORS.darkblue,
               headerLeft: () => (
                 <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
@@ -42,8 +42,6 @@ export default function Home() {
               <Nearbyjobs jobTitle={'React Developer'}/>
               </View>
             </ScrollView>
-              <Link href="/details">Go to Details</Link>
-              <Link href="/menu">Go to Menu</Link>
     </SafeAreaView>
   );
 }
