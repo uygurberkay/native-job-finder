@@ -30,7 +30,9 @@ const jobDetails = () => {
     const [refreshing, setRefreshing] = useState(false);
 
     const onRefresh = useCallback(() => {
-    
+        setRefreshing(true)
+        refetch()
+        setRefreshing(false)
     }, []);
 
     const displayTabContent = () => {
@@ -93,7 +95,7 @@ const jobDetails = () => {
                     <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
                 >
                 {isLoading ? (
-                    <ActivityIndicator size='large' color={COLORS.primary} />
+                    <ActivityIndicator size='large' color={COLORS.lime} />
                 ) : error ? (
                     <Text>Something went wrong</Text>
                 ) : data.length === 0 ? (
