@@ -46,25 +46,23 @@ const Welcome = ({username, searchTerm, setSearchTerm, handleClick }) => {
       </View>
 
       <View style={styles.tabsContainer}>
-        <FlatList 
+        <FlatList
           data={jobTypes}
-          renderItem={({item}) => (
+          renderItem={({ item }) => (
             <TouchableOpacity
-              style={styles.tab(activeJobType,item)}
+              style={styles.tab(activeJobType, item)}
               onPress={() => {
                 setActiveJobType(item);
-                router.push(`/search/${item}`)
+                router.push(`/search/${item}`);
               }}
             >
-              <Text style={styles.tabText(activeJobType,item)}>
-                {item}
-              </Text>
+              <Text style={styles.tabText(activeJobType, item)}>{item}</Text>
             </TouchableOpacity>
           )}
-          keyExtractor={item => item}
-          contentContainerStyle={{columnGap: SIZES.small}}
+          keyExtractor={(item) => item}
+          contentContainerStyle={{ columnGap: SIZES.small }}
           horizontal
-        /> 
+        />
       </View>
     </View>
   )
