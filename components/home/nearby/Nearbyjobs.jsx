@@ -42,7 +42,7 @@ const Nearbyjobs = ({jobTitle}) => {
 
       <View style={styles.cardsContainer}>
         {isLoading ? (
-          <ActivityIndicator size='large' color={COLORS.primary} />
+          <ActivityIndicator size='large' color={COLORS.lime} />
         ) : error ? (
           <Text>Something went wrong</Text>
         ) : (

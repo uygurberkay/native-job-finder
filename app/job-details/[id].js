@@ -7,7 +7,6 @@ import {
 import {
     Stack, useRouter, useSearchParams,
 } from 'expo-router'
-
 import {
     Company, JobAbout, JobFooter, JobTabs, ScreenHeaderBtn, Specifics,
 } from "../../components";
@@ -119,9 +118,8 @@ const jobDetails = () => {
                     </View>
                 )}
                 </ScrollView>
-
             </>
-
+            <JobFooter url={data[0]?.job_google_link ?? 'https://careers.google.com/jobs/results/'} />
         </SafeAreaView>
     )
 }
