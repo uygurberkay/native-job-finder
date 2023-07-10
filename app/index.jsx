@@ -18,8 +18,8 @@ export default function Home() {
     <SafeAreaView style={{ flex: 1, backgroundColor: Platform.OS === 'ios' ? COLORS.lightWhite : COLORS.lightWhite, }}>
         <Stack.Screen 
             options={{ 
-              headerStyle: { backgroundColor: COLORS.lime },
-              headerTitle: "",
+              headerStyle: { backgroundColor: COLORS.lime, justifyContent:  "center" },
+              headerTitle: "Job Finder",
               headerTintColor: COLORS.darkblue,
               headerLeft: () => (
                 <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
@@ -27,7 +27,6 @@ export default function Home() {
               headerRight: () => (
                 <ScreenHeaderBtn iconUrl={icons.profile} dimension='100%' />
               ),
-              headerTitle: "",
             }}
             />
             <ScrollView showsVerticalScrollIndicator={false}>

@@ -1,10 +1,40 @@
 {
   "expo": {
     "scheme": "acme",
+    "description": "This is an job finder app",
     "web": {
       "bundler": "metro"
     },
-    "name": "react_native_jobs",
-    "slug": "react_native_jobs"
+    "name": "Meta Yıldız Job Finder",
+    "slug": "my-job-finder",
+    "version": "1.0.0",
+    "icon": "./assets/logo.png",
+    "splash": {
+      "image": "./assets/1.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.uygurberkay.myjobfinder"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/1.png",
+        "backgroundColor": "#333"
+      },
+      "package": "com.uygurberkay.myjobfinder"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e4cd34bd-68e4-4b33-aeaa-f846bfa03fe1"
+      }
+    }
   }
 }
